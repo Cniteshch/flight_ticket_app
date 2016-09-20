@@ -1,0 +1,18 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title ng-bind="$state.current.data.pageTitle"></title>
+	<meta name="viewport" content="width=device-width" />
+	<script type="text/javascript" data-main="../config/main.js" src="../requirejs/require.js"></script>
+	<link rel="stylesheet" type="text/css" href="../main.css">
+</head>
+<body>
+	<div class="container">
+		<div ui-view></div>
+	</div>
+	<div class="loader">
+		<img src="../images/loader.gif" />
+	</div>
+</body>
+
+</html>

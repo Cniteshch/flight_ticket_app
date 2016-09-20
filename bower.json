@@ -1,0 +1,35 @@
+{
+  "name": "flight_ticket_app",
+  "description": "Air ticketing web app built using angular",
+  "main": "index.js",
+  "authors": [
+    "Nitesh Chaudhary"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "angular": "~1.5.2",
+    "requirejs": "~2.2.0",
+    "requirejs-plugins": "~1.0.3",
+    "underscore": "~1.8.3",
+    "restangular": "~1.5.2",
+    "ui-router": "~0.2.18",
+    "bootstrap": "~3.3.6",
+    "angular-bootstrap": "~1.2.5",
+    "moment": "~2.12.0",
+    "angular-messages": "~1.5.3"
+  },
+  "resolutions": {
+    "angular": "~1.5.2"
+  }
+}

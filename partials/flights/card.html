@@ -1,0 +1,37 @@
+<td colspan="4">
+	<div class="row card">
+		<div class="col-sm-4">
+			<div class="col-sm-6">
+				<carrier-logo image-url="{{leg.flight.carrier}}" ></carrier-logo>
+			</div>
+			<div class="col-sm-6">
+				<p class="left-text">
+					<strong><span ng-bind="leg.flight.carrier +'-' +leg.flight.number "></span></strong><br/>
+					<span class="sm-text" ng-bind="getCarrierName(leg.flight.carrier).name"></span>
+				</p>
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<div class="col-sm-5">
+				<p class="right-text">
+					<span ng-bind="leg.origin"></span>  <strong><span formatted-time="leg.departureTime" format="'HH:mm'"></span></strong><br/>
+					<span class="sm-text faint-text" formatted-time="leg.departureTime" format="'Do MMMM YYYY'"></span><br/>
+					<span class="xs-text faint-text" ng-bind="getAirportName(leg.origin).name"></span>
+				</p>
+			</div>
+			<div class="col-sm-2 center-text xs-hidden" >
+				<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span></p>
+				<span class="sm-text faint-text"><span duration="leg.duration"></span></span></span>
+			</div>
+			<div class="col-sm-5">
+				<p class="left-text">
+					<span ng-bind="leg.destination"></span>  <strong><span formatted-time="leg.arrivalTime" format="'HH:mm'"></span></strong><br/>
+					<span class="sm-text faint-text" formatted-time="leg.arrivalTime" format="'Do MMMM YYYY'"></span><br/>
+					<span class="xs-text faint-text" ng-bind="getAirportName(leg.destination).name"></span>
+				</p>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
+</td>

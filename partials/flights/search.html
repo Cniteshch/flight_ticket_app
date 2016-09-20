@@ -1,0 +1,82 @@
+<div class="row search-form">
+	<form class="form" name="searchForm" novalidate="" ng-submit="doSearch(searchForm,search)">
+
+		<div class="form-group">
+			<div class="col-sm-6">
+				<label>From</label>
+				<input type="text" name="from" ng-model="search.from" class="form-control" placeholder="Type to select your source city" 
+			      autocomplete="off" 
+				  typeahead-wait-ms="400"
+				  typeahead-min-length="2"
+				  uib-typeahead="r as (r.ct + ', ' + r.cc + '-' + r.an + '('+r.ac + ')') for r in  airportSearch($viewValue)"
+				  autocomplete-required 
+				  required="" />
+				<span ng-messages="searchForm.from.$error" ng-if="searchForm.$submitted" >
+					<span ng-messages-include="/error-messages.html"></span>
+				</span>			
+			</div>
+			<div class="col-sm-6">
+				<label>To</label>
+				<input type="text" name="to" ng-model="search.to" class="form-control" placeholder="Type to select your destination city" 
+				  autocomplete="off" 
+				  typeahead-wait-ms="400"
+				  typeahead-min-length="2"
+				  uib-typeahead="r as (r.ct + ', ' + r.cc + '-' + r.an + '('+r.ac + ')') for r in  airportSearch($viewValue)" 
+  				  autocomplete-required 
+				  required="" />
+				<span ng-messages="searchForm.to.$error" ng-if="searchForm.$submitted" >
+					<span ng-messages-include="/error-messages.html"></span>
+				</span>				  
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-6">
+				<label>Start Date</label>
+				<input type="text" name="date" ng-model="search.date" class="form-control" placeholder="Enter your date of journey" 
+				ng-click="open('dateOpen')"
+				autocomplete="off" 
+				is-open="dateMap.dateOpen"
+				uib-datepicker-popup="" 
+				required="" />
+				<span ng-messages="searchForm.date.$error" ng-if="searchForm.$submitted" >
+					<span ng-messages-include="/error-messages.html"></span>
+				</span>
+			</div>
+			<div class="col-sm-6">
+				<label>Passengers</label>
+				<select class="form-control" ng-options="r.value as r.name for r in lists.recordPassengers" ng-model="search.passenger" name="passenger"
+					required="">
+				</select>
+				<span ng-messages="searchForm.passenger.$error" ng-if="searchForm.$submitted" >
+					<span ng-messages-include="/error-messages.html"></span>
+				</span>					
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+
+		<div class="form-group">
+			<div class="col-sm-6">
+				<label>Max Price</label>
+				<input type="number" class="form-control" name="maxPrice" ng-model="search.maxPrice"
+				  placeholder="Please enter your price limit (Optional)" 
+				 />
+			</div>
+			<div class="col-sm-6">
+				<label>Currency</label>
+				<select class="form-control" ng-options="r.value as r.name for r in lists.recordCurrencies" ng-model="search.currency" name="currency"
+					ng-required="search.maxPrice"
+				>
+				</select>
+				<span ng-messages="searchForm.currency.$error" ng-if="searchForm.$submitted" >
+					<span ng-messages-include="/error-messages.html"></span>
+				</span>				
+			</div>
+		</div>
+		<button class="btn btn-special">
+			<span>Search for Flights!</span>
+		</button>
+	</form>
+</div>
