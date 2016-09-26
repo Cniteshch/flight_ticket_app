@@ -1,6 +1,6 @@
 -----
 
-First install all npm dependencies by command "npm install i"
+First install all npm dependencies by command "npm install"
 
 run index.js file "node index"
 
