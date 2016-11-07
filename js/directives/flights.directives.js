@@ -1,7 +1,7 @@
 define(['moment'],function(moment){
 	var module = angular.module('app.core.flights.directives',[]);
 	module.directive('flightDetail',function(){
-		 {
+		return {
 			templateUrl : '../../flights/card.html',
 			link : function(scope,element,attrs){
 
