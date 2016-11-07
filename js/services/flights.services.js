@@ -1,17 +1,12 @@
 define(['moment'],function(moment){
-	/**
-	 * Class for slice , adds useful functions to slice
-	 * @constructor
-	 * @param {Object} data slice data received from server
-	 * @returns {Object} Slice Object with data
-	 */
+	
 	function Slice(data){
 		return angular.extend(this,data);
 	}
 
 	/**
 	 * Returns the number of stops in a slice
-	 * @return {int} count of number of stops
+	 * count of number of stops
 	 */
 	Slice.prototype.getTripCount = function(){
 		var count = 0 ;
@@ -66,10 +61,7 @@ define(['moment'],function(moment){
 		return cities;
 	};
 
-	/**
-	 * Returns every leg in this slice in a single array
-	 * @return {Object[]} Array of legs
-	 */
+	
 	Slice.prototype.getLegs = function(){
 		var legs = [];
 		this.slice[0].segment.forEach(function(segment){
@@ -103,8 +95,7 @@ define(['moment'],function(moment){
 		return {
 			/**
 			 * Searches the qpx api for the input search data
-			 * @param  {Object} data search data
-			 * @return {Object}      Promise object
+			
 			 */
 			search : function(data){
 				return qpx_api.all(resource_url).post(data).then(function(response){
